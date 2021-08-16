@@ -57,26 +57,39 @@ div:empty + div:not(:empty) {
 
 
 
-[data-keyname="Space"] {
+[data-keyname=" "] {
     border-left: solid black !important;
     border-right: solid black;
 }
 
-[data-keyname="Alt"] + [data-keyname="Space"] {
+[data-keyname="Alt"] + [data-keyname=" "] {
     border-left: solid white !important;
 }
 
 
 
-[data-keyname="Right_Shift"] {
+[data-keyname="Backspace"] + [data-keyname="Backspace"] {
+    border-left: solid black;
+    border-right: solid white;
+    justify-content: flex-start;
+}
+
+[data-keyname="Backspace"] {
+    border-right: solid black;
+    justify-content: flex-end;
+}
+
+
+
+.Right_Shift {
     border-left: solid black !important;
 }
 
-[data-keyname="Left_Shift"] {
+.Left_Shift {
     border-right: solid black;
 }
 
-[data-keyname="Left_Shift"] + div:empty{
+.Left_Shift + div:empty{
     border-left: solid black;
     border-right: solid white 1px;
 }
@@ -90,11 +103,13 @@ div:empty + div:not(:empty) {
 [data-keyname="]"] + div:empty {
     border-top: solid black;
     border-right: solid white 1px;
+    border-bottom: solid white;
 }
 
 [data-keyname="."] + div:empty {
     border-top: solid black;
-    border-right: solid white 1px
+    border-right: solid white 2px;
+    border-bottom: solid white 1px;
 }
 
 
@@ -109,9 +124,9 @@ div:empty + [data-keyname="0"] {
 }
 
 
-[data-keyname="Space"] + [data-keyname="Space"] + [data-keyname="Space"] + [data-keyname="Space"] + [data-keyname="Space"] + [data-keyname="Space"] + [data-keyname="Space"] + [data-keyname="Space"] + [data-keyname="Space"],
-[data-keyname="Right_Shift"] + div:empty + div:empty,
-[data-keyname="Right_Ctrl"] + div:empty + div:empty {
+[data-keyname=" "] + [data-keyname=" "] + [data-keyname=" "] + [data-keyname=" "] + [data-keyname=" "] + [data-keyname=" "] + [data-keyname=" "] + [data-keyname=" "] + [data-keyname=" "],
+.Right_Shift + div:empty + div:empty,
+[data-keyname="Control"] + div:empty + div:empty {
     border-right: solid white 1px;
 }
 
