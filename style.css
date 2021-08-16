@@ -1,0 +1,130 @@
+body {
+    background-color: lightgray;
+    display: grid;
+    grid-template-columns: repeat(21, calc(100%/21));
+    text-align: center;
+}
+
+body > * {
+    max-width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    color: white;
+    border: solid white 2px;
+}
+
+
+
+div:empty {
+    border-right: solid black;
+}
+
+div:empty + div:empty {
+    border-left: solid black;
+}
+
+div:empty + div:not(:empty) {
+    border-left: solid;
+}
+
+
+
+[data-keyname="Tab"] + div:empty {
+    border-left: solid black;
+    border-right: white;
+}
+
+[data-keyname="Tab"] {
+    border-right: solid black;
+}
+
+
+
+[data-keyname="+"] + [data-keyname="CapsLock"] {
+    border-right: solid black;
+    justify-content: flex-end;
+}
+
+
+
+[data-keyname="CapsLock"] + [data-keyname="CapsLock"] {
+    border-left: solid black;
+    justify-content: flex-start;
+}
+
+
+
+[data-keyname="Space"] {
+    border-left: solid black !important;
+    border-right: solid black;
+}
+
+[data-keyname="Alt"] + [data-keyname="Space"] {
+    border-left: solid white !important;
+}
+
+
+
+[data-keyname="Right_Shift"] {
+    border-left: solid black !important;
+}
+
+[data-keyname="Left_Shift"] {
+    border-right: solid black;
+}
+
+[data-keyname="Left_Shift"] + div:empty{
+    border-left: solid black;
+    border-right: solid white 1px;
+}
+
+
+
+[data-keyname="Enter"] {
+    border-bottom: solid black;
+}
+
+[data-keyname="]"] + div:empty {
+    border-top: solid black;
+    border-right: solid white 1px;
+}
+
+[data-keyname="."] + div:empty {
+    border-top: solid black;
+    border-right: solid white 1px
+}
+
+
+
+div:empty + [data-keyname="0"] {
+    border-right: solid black;
+}
+
+[data-keyname="0"] + div:empty {
+    border-left: solid black;
+    border-right: white;
+}
+
+
+[data-keyname="Space"] + [data-keyname="Space"] + [data-keyname="Space"] + [data-keyname="Space"] + [data-keyname="Space"] + [data-keyname="Space"] + [data-keyname="Space"] + [data-keyname="Space"] + [data-keyname="Space"],
+[data-keyname="Right_Shift"] + div:empty + div:empty,
+[data-keyname="Right_Ctrl"] + div:empty + div:empty {
+    border-right: solid white 1px;
+}
+
+[data-keyname="Escape"] + div:empty,
+[data-keyname="f12"] + div:empty {
+    border-color: white;
+}
+
+
+
+
+
+.active {
+    background-color: darkred !important;
+    border-color: darkred !important;
+}
