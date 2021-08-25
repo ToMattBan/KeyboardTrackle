@@ -7,5 +7,8 @@ window.addEventListener('keydown', function(e){
 
 window.addEventListener('keyup', function(){
     var actualPressed = document.querySelectorAll('.active');
-    actualPressed.forEach(key => { key.classList.remove('active') })
+
+    if (actualPressed) {
+        actualPressed.forEach(key => { key.classList.remove('active') })
+    }
 })
